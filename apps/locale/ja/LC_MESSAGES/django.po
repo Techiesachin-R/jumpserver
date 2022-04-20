@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-13 20:35+0800\n"
+"POT-Creation-Date: 2022-04-20 10:13+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -157,7 +157,8 @@ msgstr "コンマ区切り文字列の形式。* はすべて一致すること�
 #: authentication/models.py:69
 #: authentication/templates/authentication/_msg_different_city.html:9
 #: authentication/templates/authentication/_msg_oauth_bind.html:9
-#: ops/models/adhoc.py:159 users/forms/profile.py:31 users/models/user.py:659
+#: ops/models/adhoc.py:159 tickets/forms.py:7 tickets/forms.py:9
+#: users/forms/profile.py:31 users/models/user.py:659
 #: users/templates/users/_msg_user_created.html:12
 #: xpack/plugins/change_auth_plan/models/asset.py:34
 #: xpack/plugins/change_auth_plan/models/asset.py:195
@@ -759,8 +760,9 @@ msgstr "確認済みの日付"
 #: assets/models/base.py:177 audits/signal_handlers.py:68
 #: authentication/forms.py:22
 #: authentication/templates/authentication/login.html:181
-#: settings/serializers/auth/ldap.py:43 users/forms/profile.py:21
-#: users/templates/users/_msg_user_created.html:13
+#: settings/serializers/auth/ldap.py:43 tickets/forms.py:14
+#: tickets/templates/tickets/approve_check_password.html:25
+#: users/forms/profile.py:21 users/templates/users/_msg_user_created.html:13
 #: users/templates/users/user_password_verify.html:18
 #: xpack/plugins/change_auth_plan/models/base.py:42
 #: xpack/plugins/change_auth_plan/models/base.py:121
@@ -1398,6 +1400,7 @@ msgid "Filename"
 msgstr "ファイル名"
 
 #: audits/models.py:43 audits/models.py:115 terminal/models/sharing.py:90
+#: tickets/views/approve.py:90
 #: xpack/plugins/change_auth_plan/serializers/app.py:87
 #: xpack/plugins/change_auth_plan/serializers/asset.py:197
 msgid "Success"
@@ -2177,7 +2180,7 @@ msgstr "コードエラー"
 #: authentication/templates/authentication/_msg_reset_password.html:3
 #: authentication/templates/authentication/_msg_rest_password_success.html:2
 #: authentication/templates/authentication/_msg_rest_public_key_success.html:2
-#: jumpserver/conf.py:298 ops/tasks.py:145 ops/tasks.py:148
+#: jumpserver/conf.py:299 ops/tasks.py:145 ops/tasks.py:148
 #: perms/templates/perms/_msg_item_permissions_expire.html:3
 #: perms/templates/perms/_msg_permed_items_expire.html:3
 #: users/templates/users/_msg_account_expire_reminder.html:4
@@ -2638,11 +2641,11 @@ msgstr "特殊文字を含むべきではない"
 msgid "The mobile phone number format is incorrect"
 msgstr "携帯電話番号の形式が正しくありません"
 
-#: jumpserver/conf.py:297
+#: jumpserver/conf.py:298
 msgid "Create account successfully"
 msgstr "アカウントを正常に作成"
 
-#: jumpserver/conf.py:299
+#: jumpserver/conf.py:300
 msgid "Your account has been created successfully"
 msgstr "アカウントが正常に作成されました"
 
@@ -4541,11 +4544,11 @@ msgstr ""
 "WindowsはクライアントをダウンロードしてSSH資産に接続する必要があり、macOSシス"
 "テムは独自のTerminalを採用している。"
 
-#: templates/resource_download.html:51
+#: templates/resource_download.html:53
 msgid "Windows Remote application publisher tools"
 msgstr "Windowsリモートアプリケーション発行者ツール"
 
-#: templates/resource_download.html:52
+#: templates/resource_download.html:54
 msgid ""
 "Jmservisor is the program used to pull up remote applications in Windows "
 "Remote Application publisher"
@@ -4557,7 +4560,7 @@ msgstr ""
 msgid "Filters"
 msgstr "フィルター"
 
-#: terminal/api/endpoint.py:65
+#: terminal/api/endpoint.py:63
 msgid "Not found protocol query params"
 msgstr ""
 
@@ -5290,19 +5293,19 @@ msgstr "もう一度お試しください"
 msgid "Super ticket"
 msgstr "スーパーチケット"
 
-#: tickets/notifications.py:63
+#: tickets/notifications.py:72
 msgid "Your has a new ticket, applicant - {}"
 msgstr "新しいチケットがあります- {}"
 
-#: tickets/notifications.py:69
+#: tickets/notifications.py:78
 msgid "New Ticket - {} ({})"
 msgstr "新しいチケット- {} ({})"
 
-#: tickets/notifications.py:91
+#: tickets/notifications.py:123
 msgid "Your ticket has been processed, processor - {}"
 msgstr "チケットが処理されました。プロセッサー- {}"
 
-#: tickets/notifications.py:95
+#: tickets/notifications.py:127
 msgid "Ticket has processed - {} ({})"
 msgstr "チケットが処理済み- {} ({})"
 
@@ -5439,9 +5442,53 @@ msgid "The current organization type already exists"
 msgstr "現在の組織タイプは既に存在します。"
 
 #: tickets/templates/tickets/_base_ticket_body.html:17
-#: tickets/templates/tickets/_msg_ticket.html:12
 msgid "Click here to review"
 msgstr "こちらをクリックしてご覧ください"
+
+#: tickets/templates/tickets/_msg_ticket.html:12
+msgid "View details"
+msgstr "詳細の表示"
+
+#: tickets/templates/tickets/_msg_ticket.html:17
+msgid "Direct approval"
+msgstr "直接承認"
+
+#: tickets/templates/tickets/approve_check_password.html:11
+msgid "Ticket information"
+msgstr "作業指示情報"
+
+#: tickets/templates/tickets/approve_check_password.html:19
+#, fuzzy
+#| msgid "Ticket flow approval rule"
+msgid "Ticket approval"
+msgstr "作業指示の承認"
+
+#: tickets/templates/tickets/approve_check_password.html:38
+#: users/templates/users/forgot_password.html:32
+msgid "Submit"
+msgstr "送信"
+
+#: tickets/templates/tickets/approve_check_password.html:42
+msgid "Directly enter the username and password to pass the approval"
+msgstr "ユーザー名とパスワードを入力して直接承認します"
+
+#: tickets/views/approve.py:33
+msgid "Ticket direct approval"
+msgstr "作業指示の直接承認"
+
+#: tickets/views/approve.py:34
+msgid ""
+"This ticket does not exist, the process has ended, or this link has expired"
+msgstr "このワークシートが存在しないか、ワークシートが終了したか、このリンクが無効になっています"
+
+#: tickets/views/approve.py:75 users/views/profile/password.py:36
+#: users/views/profile/password.py:41
+msgid "Password invalid"
+msgstr "パスワード無効"
+
+#: tickets/views/approve.py:81
+msgid "This user is not authorized to approve this ticket"
+msgstr "このユーザーはこの作業指示を承認する権限がありません"
 
 #: users/api/user.py:183
 msgid "Could not reset self otp, use profile reset instead"
@@ -5817,10 +5864,6 @@ msgstr "ここをクリックしてパスワードを設定してください"
 msgid "Input your email, that will send a mail to your"
 msgstr "あなたのメールを入力し、それはあなたにメールを送信します"
 
-#: users/templates/users/forgot_password.html:32
-msgid "Submit"
-msgstr "送信"
-
 #: users/templates/users/mfa_setting.html:24
 msgid "Enable MFA"
 msgstr "MFAの有効化"
@@ -5962,10 +6005,6 @@ msgstr "OTP無効化成功"
 #: users/views/profile/otp.py:165
 msgid "OTP disable success, return login page"
 msgstr "OTP無効化成功、ログインページを返す"
-
-#: users/views/profile/password.py:36 users/views/profile/password.py:41
-msgid "Password invalid"
-msgstr "パスワード無効"
 
 #: users/views/profile/reset.py:40
 msgid "Send reset password message"
