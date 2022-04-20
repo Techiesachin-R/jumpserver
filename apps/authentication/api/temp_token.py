@@ -3,19 +3,22 @@ from rest_framework.response import Response
 from rest_framework.decorators import action
 
 from common.drf.api import JMSModelViewSet
-from common.permissions import IsValidUser
 from ..models import TempToken
 from ..serializers import TempTokenSerializer
+from rbac.permissions import RBACPermission
 
 
 class TempTokenViewSet(JMSModelViewSet):
     serializer_class = TempTokenSerializer
-    permission_classes = [IsValidUser]
+    permission_classes = [RBACPermission]
     http_method_names = ['post', 'get', 'options', 'patch']
+    rbac_perms = {
+        'expire': 'authentication.change_temptoken',
+    }
 
     def get_queryset(self):
         username = self.request.user.username
-        return TempToken.objects.filter(username=username)
+        return TempToken.objects.filter(username=username).order_by('-date_created')
 
     @action(methods=['PATCH'], detail=True, url_path='expire')
     def expire(self, *args, **kwargs):
@@ -24,4 +27,3 @@ class TempTokenViewSet(JMSModelViewSet):
         instance.save()
         serializer = self.get_serializer(instance)
         return Response(serializer.data)
-

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: JumpServer 0.3.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-20 10:13+0800\n"
+"POT-Creation-Date: 2022-04-20 16:35+0800\n"
 "PO-Revision-Date: 2021-05-20 10:54+0800\n"
 "Last-Translator: ibuler <ibuler@qq.com>\n"
 "Language-Team: JumpServer team<ibuler@qq.com>\n"
@@ -28,7 +28,7 @@ msgstr "访问控制"
 #: assets/models/group.py:20 assets/models/label.py:18 ops/mixin.py:24
 #: orgs/models.py:65 perms/models/base.py:83 rbac/models/role.py:29
 #: settings/models.py:29 settings/serializers/sms.py:6
-#: terminal/models/endpoint.py:10 terminal/models/endpoint.py:55
+#: terminal/models/endpoint.py:10 terminal/models/endpoint.py:58
 #: terminal/models/storage.py:23 terminal/models/task.py:16
 #: terminal/models/terminal.py:100 users/forms/profile.py:32
 #: users/models/group.py:15 users/models/user.py:661
@@ -37,12 +37,12 @@ msgid "Name"
 msgstr "名称"
 
 #: acls/models/base.py:27 assets/models/cmd_filter.py:84
-#: assets/models/user.py:247 terminal/models/endpoint.py:58
+#: assets/models/user.py:247 terminal/models/endpoint.py:61
 msgid "Priority"
 msgstr "优先级"
 
 #: acls/models/base.py:28 assets/models/cmd_filter.py:84
-#: assets/models/user.py:247 terminal/models/endpoint.py:59
+#: assets/models/user.py:247 terminal/models/endpoint.py:62
 msgid "1-100, the lower the value will be match first"
 msgstr "优先级可选范围为 1-100 (数值越小越优先)"
 
@@ -60,7 +60,7 @@ msgstr "激活中"
 #: assets/models/domain.py:64 assets/models/group.py:23
 #: assets/models/label.py:23 ops/models/adhoc.py:38 orgs/models.py:68
 #: perms/models/base.py:93 rbac/models/role.py:37 settings/models.py:34
-#: terminal/models/endpoint.py:20 terminal/models/endpoint.py:65
+#: terminal/models/endpoint.py:20 terminal/models/endpoint.py:68
 #: terminal/models/storage.py:26 terminal/models/terminal.py:114
 #: tickets/models/comment.py:24 tickets/models/ticket.py:154
 #: users/models/group.py:16 users/models/user.py:698
@@ -87,12 +87,12 @@ msgstr "登录复核"
 #: assets/models/cmd_filter.py:30 assets/models/label.py:15 audits/models.py:37
 #: audits/models.py:60 audits/models.py:85 audits/serializers.py:100
 #: authentication/models.py:51 orgs/models.py:214 perms/models/base.py:84
-#: rbac/builtin.py:107 rbac/models/rolebinding.py:40
+#: rbac/builtin.py:110 rbac/models/rolebinding.py:40
 #: terminal/backends/command/models.py:20
 #: terminal/backends/command/serializers.py:12 terminal/models/session.py:44
 #: terminal/notifications.py:91 terminal/notifications.py:139
-#: tickets/models/comment.py:17 users/const.py:14 users/models/user.py:886
-#: users/models/user.py:917 users/serializers/group.py:19
+#: tickets/models/comment.py:17 users/const.py:14 users/models/user.py:883
+#: users/models/user.py:914 users/serializers/group.py:19
 msgid "User"
 msgstr "用户"
 
@@ -323,7 +323,7 @@ msgstr "属性"
 msgid "Can match application"
 msgstr "匹配应用"
 
-#: applications/models/application.py:306
+#: applications/models/application.py:305
 msgid "Application user"
 msgstr "应用用户"
 
@@ -336,8 +336,8 @@ msgstr "类别名称"
 
 #: applications/serializers/application.py:71
 #: applications/serializers/application.py:102
-#: assets/serializers/system_user.py:27 audits/serializers.py:29
-#: perms/serializers/application/permission.py:19
+#: assets/serializers/cmd_filter.py:34 assets/serializers/system_user.py:27
+#: audits/serializers.py:29 perms/serializers/application/permission.py:19
 #: tickets/serializers/ticket/meta/ticket_type/apply_application.py:33
 #: tickets/serializers/ticket/ticket.py:21
 #: tickets/serializers/ticket/ticket.py:173
@@ -349,17 +349,17 @@ msgstr "类型名称"
 #: assets/models/domain.py:26 assets/models/gathered_user.py:19
 #: assets/models/group.py:22 assets/models/label.py:25
 #: assets/serializers/account.py:18 assets/serializers/cmd_filter.py:28
-#: assets/serializers/cmd_filter.py:49 common/db/models.py:113
+#: assets/serializers/cmd_filter.py:48 common/db/models.py:113
 #: common/mixins/models.py:50 ops/models/adhoc.py:39 ops/models/command.py:30
 #: orgs/models.py:67 orgs/models.py:217 perms/models/base.py:92
-#: users/models/group.py:18 users/models/user.py:918
+#: users/models/group.py:18 users/models/user.py:915
 #: xpack/plugins/cloud/models.py:125
 msgid "Date created"
 msgstr "创建日期"
 
 #: applications/serializers/application.py:104 assets/models/base.py:182
 #: assets/models/gathered_user.py:20 assets/serializers/account.py:21
-#: assets/serializers/cmd_filter.py:29 assets/serializers/cmd_filter.py:50
+#: assets/serializers/cmd_filter.py:29 assets/serializers/cmd_filter.py:49
 #: common/db/models.py:114 common/mixins/models.py:51 ops/models/adhoc.py:40
 #: orgs/models.py:218
 msgid "Date updated"
@@ -812,7 +812,7 @@ msgid "Default"
 msgstr "默认"
 
 #: assets/models/cluster.py:36 assets/models/label.py:14 rbac/const.py:6
-#: users/models/user.py:903
+#: users/models/user.py:900
 msgid "System"
 msgstr "系统"
 
@@ -1120,9 +1120,13 @@ msgstr "密钥密码"
 msgid "private key invalid or passphrase error"
 msgstr "密钥不合法或密钥密码错误"
 
-#: assets/serializers/cmd_filter.py:51
+#: assets/serializers/cmd_filter.py:35 assets/serializers/cmd_filter.py:50
 msgid "Action display"
-msgstr "动作"
+msgstr "动作名称"
+
+#: assets/serializers/cmd_filter.py:51 ops/models/adhoc.py:155
+msgid "Pattern"
+msgstr "模式"
 
 #: assets/serializers/domain.py:13 assets/serializers/label.py:12
 #: assets/serializers/system_user.py:59
@@ -1346,7 +1350,7 @@ msgstr "日志审计"
 
 #: audits/models.py:27 audits/models.py:57
 #: authentication/templates/authentication/_access_key_modal.html:65
-#: rbac/tree.py:166
+#: rbac/tree.py:168
 msgid "Delete"
 msgstr "删除"
 
@@ -1400,11 +1404,11 @@ msgstr "文件管理"
 
 #: audits/models.py:55
 #: authentication/templates/authentication/_access_key_modal.html:22
-#: rbac/tree.py:163
+#: rbac/tree.py:165
 msgid "Create"
 msgstr "创建"
 
-#: audits/models.py:56 rbac/tree.py:165 templates/_csv_import_export.html:18
+#: audits/models.py:56 rbac/tree.py:167 templates/_csv_import_export.html:18
 #: templates/_csv_update_modal.html:6
 msgid "Update"
 msgstr "更新"
@@ -1557,7 +1561,7 @@ msgstr "钉钉"
 
 #: audits/signal_handlers.py:73 authentication/models.py:76
 msgid "Temporary token"
-msgstr "临时 Token"
+msgstr "临时密码"
 
 #: audits/signal_handlers.py:107
 msgid "User and Group"
@@ -2733,10 +2737,6 @@ msgstr "可以查看任务监控"
 msgid "Tasks"
 msgstr "任务"
 
-#: ops/models/adhoc.py:155
-msgid "Pattern"
-msgstr "模式"
-
 #: ops/models/adhoc.py:156
 msgid "Options"
 msgstr "选项"
@@ -2854,15 +2854,21 @@ msgstr "任务列表"
 msgid "Update task content: {}"
 msgstr "更新任务内容: {}"
 
-#: orgs/api.py:68
+#: orgs/api.py:69
 msgid "The current organization ({}) cannot be deleted"
 msgstr "当前组织 ({}) 不能被删除"
 
-#: orgs/api.py:76
+#: orgs/api.py:74
+msgid ""
+"LDAP synchronization is set to the current organization. Please switch to "
+"another organization before deleting"
+msgstr "LDAP 同步设置组织为当前组织，请切换其他组织后再进行删除操作"
+
+#: orgs/api.py:83
 msgid "The organization have resource ({}) cannot be deleted"
 msgstr "组织存在资源 ({}) 不能被删除"
 
-#: orgs/apps.py:7 rbac/tree.py:112
+#: orgs/apps.py:7 rbac/tree.py:114
 msgid "App organizations"
 msgstr "组织管理"
 
@@ -3072,15 +3078,15 @@ msgstr "如果有疑问或需求，请联系系统管理员"
 msgid "My applications"
 msgstr "我的应用"
 
-#: rbac/api/role.py:32
+#: rbac/api/role.py:33
 msgid "Internal role, can't be destroy"
 msgstr "内部角色，不能删除"
 
-#: rbac/api/role.py:36
+#: rbac/api/role.py:37
 msgid "The role has been bound to users, can't be destroy"
 msgstr "角色已绑定用户，不能删除"
 
-#: rbac/api/role.py:43
+#: rbac/api/role.py:44
 msgid "Internal role, can't be update"
 msgstr "内部角色，不能更新"
 
@@ -3092,27 +3098,27 @@ msgstr "{} 至少有一个系统角色"
 msgid "RBAC"
 msgstr "RBAC"
 
-#: rbac/builtin.py:98
+#: rbac/builtin.py:101
 msgid "SystemAdmin"
 msgstr "系统管理员"
 
-#: rbac/builtin.py:101
+#: rbac/builtin.py:104
 msgid "SystemAuditor"
 msgstr "系统审计员"
 
-#: rbac/builtin.py:104
+#: rbac/builtin.py:107
 msgid "SystemComponent"
 msgstr "系统组件"
 
-#: rbac/builtin.py:110
+#: rbac/builtin.py:113
 msgid "OrgAdmin"
 msgstr "组织管理员"
 
-#: rbac/builtin.py:113
+#: rbac/builtin.py:116
 msgid "OrgAuditor"
 msgstr "组织审计员"
 
-#: rbac/builtin.py:116
+#: rbac/builtin.py:119
 msgid "OrgUser"
 msgstr "组织用户"
 
@@ -3156,11 +3162,11 @@ msgstr "授权"
 msgid "Built-in"
 msgstr "内置"
 
-#: rbac/models/role.py:130
+#: rbac/models/role.py:144
 msgid "System role"
 msgstr "系统角色"
 
-#: rbac/models/role.py:138
+#: rbac/models/role.py:152
 msgid "Organization role"
 msgstr "组织角色"
 
@@ -3168,21 +3174,21 @@ msgstr "组织角色"
 msgid "Role binding"
 msgstr "角色绑定"
 
-#: rbac/models/rolebinding.py:128
+#: rbac/models/rolebinding.py:151
 msgid ""
 "User last role in org, can not be delete, you can remove user from org "
 "instead"
 msgstr "用户最后一个角色，不能删除，你可以将用户从组织移除"
 
-#: rbac/models/rolebinding.py:135
+#: rbac/models/rolebinding.py:158
 msgid "Organization role binding"
 msgstr "组织角色绑定"
 
-#: rbac/models/rolebinding.py:150
+#: rbac/models/rolebinding.py:173
 msgid "System role binding"
 msgstr "系统角色绑定"
 
-#: rbac/serializers/permission.py:26 users/serializers/profile.py:126
+#: rbac/serializers/permission.py:26 users/serializers/profile.py:127
 msgid "Perms"
 msgstr "权限"
 
@@ -3266,27 +3272,27 @@ msgstr "我的资产"
 msgid "My apps"
 msgstr "我的应用"
 
-#: rbac/tree.py:113
+#: rbac/tree.py:115
 msgid "Ticket comment"
 msgstr "工单评论"
 
-#: rbac/tree.py:114 tickets/models/ticket.py:163
+#: rbac/tree.py:116 tickets/models/ticket.py:163
 msgid "Ticket"
 msgstr "工单管理"
 
-#: rbac/tree.py:115
+#: rbac/tree.py:117
 msgid "Common setting"
 msgstr "一般设置"
 
-#: rbac/tree.py:116
+#: rbac/tree.py:118
 msgid "View permission tree"
 msgstr "查看授权树"
 
-#: rbac/tree.py:117
+#: rbac/tree.py:119
 msgid "Execute batch command"
 msgstr "执行批量命令"
 
-#: rbac/tree.py:164
+#: rbac/tree.py:166
 msgid "View"
 msgstr "查看"
 
@@ -4168,9 +4174,10 @@ msgstr "Telnet 成功正则表达式"
 
 #: settings/serializers/terminal.py:33
 msgid ""
-"The login success message varies with devices. if you cannot log in to the "
-"device through Telnet, set this parameter"
-msgstr "不同设备登录成功提示不一样，所以如果 telnet 不能正常登录，可以这里设置"
+"Tips: The login success message varies with devices. if you cannot log in to "
+"the device through Telnet, set this parameter"
+msgstr ""
+"提示: 不同设备登录成功提示不一样，所以如果 telnet 不能正常登录，可以这里设置"
 
 #: settings/serializers/terminal.py:36
 msgid "Enable database proxy"
@@ -4180,104 +4187,108 @@ msgstr "启用数据库组件"
 msgid "Enable XRDP"
 msgstr "启用 XRDP 服务"
 
-#: settings/utils/ldap.py:417
+#: settings/serializers/terminal.py:38
+msgid "Enable KoKo SSH"
+msgstr "启用 KoKo SSH"
+
+#: settings/utils/ldap.py:419
 msgid "ldap:// or ldaps:// protocol is used."
 msgstr "使用 ldap:// 或 ldaps:// 协议"
 
-#: settings/utils/ldap.py:428
+#: settings/utils/ldap.py:430
 msgid "Host or port is disconnected: {}"
 msgstr "主机或端口不可连接: {}"
 
-#: settings/utils/ldap.py:430
+#: settings/utils/ldap.py:432
 msgid "The port is not the port of the LDAP service: {}"
 msgstr "端口不是LDAP服务端口: {}"
 
-#: settings/utils/ldap.py:432
+#: settings/utils/ldap.py:434
 msgid "Please add certificate: {}"
 msgstr "请添加证书"
 
-#: settings/utils/ldap.py:436 settings/utils/ldap.py:463
-#: settings/utils/ldap.py:493 settings/utils/ldap.py:521
+#: settings/utils/ldap.py:438 settings/utils/ldap.py:465
+#: settings/utils/ldap.py:495 settings/utils/ldap.py:523
 msgid "Unknown error: {}"
 msgstr "未知错误: {}"
 
-#: settings/utils/ldap.py:450
+#: settings/utils/ldap.py:452
 msgid "Bind DN or Password incorrect"
 msgstr "绑定DN或密码错误"
 
-#: settings/utils/ldap.py:457
+#: settings/utils/ldap.py:459
 msgid "Please enter Bind DN: {}"
 msgstr "请输入绑定DN: {}"
 
-#: settings/utils/ldap.py:459
+#: settings/utils/ldap.py:461
 msgid "Please enter Password: {}"
 msgstr "请输入密码: {}"
 
-#: settings/utils/ldap.py:461
+#: settings/utils/ldap.py:463
 msgid "Please enter correct Bind DN and Password: {}"
 msgstr "请输入正确的绑定DN和密码: {}"
 
-#: settings/utils/ldap.py:479
+#: settings/utils/ldap.py:481
 msgid "Invalid User OU or User search filter: {}"
 msgstr "不合法的用户OU或用户过滤器: {}"
 
-#: settings/utils/ldap.py:510
+#: settings/utils/ldap.py:512
 msgid "LDAP User attr map not include: {}"
 msgstr "LDAP属性映射没有包含: {}"
 
-#: settings/utils/ldap.py:517
+#: settings/utils/ldap.py:519
 msgid "LDAP User attr map is not dict"
 msgstr "LDAP属性映射不合法"
 
-#: settings/utils/ldap.py:536
+#: settings/utils/ldap.py:538
 msgid "LDAP authentication is not enabled"
 msgstr "LDAP认证没有启用"
 
-#: settings/utils/ldap.py:554
+#: settings/utils/ldap.py:556
 msgid "Error (Invalid LDAP server): {}"
 msgstr "错误 （不合法的LDAP服务器地址）: {}"
 
-#: settings/utils/ldap.py:556
+#: settings/utils/ldap.py:558
 msgid "Error (Invalid Bind DN): {}"
 msgstr "错误（不合法的绑定DN）: {}"
 
-#: settings/utils/ldap.py:558
+#: settings/utils/ldap.py:560
 msgid "Error (Invalid LDAP User attr map): {}"
 msgstr "错误（不合法的LDAP属性映射）: {}"
 
-#: settings/utils/ldap.py:560
+#: settings/utils/ldap.py:562
 msgid "Error (Invalid User OU or User search filter): {}"
 msgstr "错误（不合法的用户OU或用户过滤器）: {}"
 
-#: settings/utils/ldap.py:562
+#: settings/utils/ldap.py:564
 msgid "Error (Not enabled LDAP authentication): {}"
 msgstr "错误（没有启用LDAP认证）: {}"
 
-#: settings/utils/ldap.py:564
+#: settings/utils/ldap.py:566
 msgid "Error (Unknown): {}"
 msgstr "错误（未知）: {}"
 
-#: settings/utils/ldap.py:567
+#: settings/utils/ldap.py:569
 msgid "Succeed: Match {} s user"
 msgstr "成功匹配 {} 个用户"
 
-#: settings/utils/ldap.py:600
+#: settings/utils/ldap.py:602
 msgid "Authentication failed (configuration incorrect): {}"
 msgstr "认证失败（配置错误）: {}"
 
-#: settings/utils/ldap.py:602
+#: settings/utils/ldap.py:604
 msgid "Authentication failed (before login check failed): {}"
 msgstr "认证失败（登录前检查失败）: {}"
 
-#: settings/utils/ldap.py:604
+#: settings/utils/ldap.py:606
 msgid "Authentication failed (username or password incorrect): {}"
 msgstr "认证失败 (用户名或密码不正确): {}"
 
-#: settings/utils/ldap.py:606
+#: settings/utils/ldap.py:608
 msgid "Authentication failed (Unknown): {}"
 msgstr "认证失败: (未知): {}"
 
-#: settings/utils/ldap.py:609
+#: settings/utils/ldap.py:611
 msgid "Authentication success: {}"
 msgstr "认证成功: {}"
 
@@ -4449,8 +4460,8 @@ msgid ""
 "JumpServer Client, currently used to launch the client, now only support "
 "launch RDP SSH client, The Telnet client will next"
 msgstr ""
-"JumpServer 客户端，目前用来唤起 特定客户端程序 连接资产, 目前仅支持 RDP SSH 客户"
-"端，Telnet 会在未来支持"
+"JumpServer 客户端，目前用来唤起 特定客户端程序 连接资产, 目前仅支持 RDP SSH "
+"客户端，Telnet 会在未来支持"
 
 #: templates/resource_download.html:30
 msgid "Microsoft"
@@ -4650,18 +4661,18 @@ msgstr "MariaDB 端口"
 msgid "PostgreSQL Port"
 msgstr "PostgreSQL 端口"
 
-#: terminal/models/endpoint.py:25 terminal/models/endpoint.py:63
+#: terminal/models/endpoint.py:25 terminal/models/endpoint.py:66
 #: terminal/serializers/endpoint.py:40 terminal/serializers/storage.py:37
 #: terminal/serializers/storage.py:49 terminal/serializers/storage.py:79
 #: terminal/serializers/storage.py:89 terminal/serializers/storage.py:97
 msgid "Endpoint"
 msgstr "端点"
 
-#: terminal/models/endpoint.py:56
+#: terminal/models/endpoint.py:59
 msgid "IP group"
 msgstr "IP 组"
 
-#: terminal/models/endpoint.py:68
+#: terminal/models/endpoint.py:71
 msgid "Endpoint rule"
 msgstr "端点规则"
 
@@ -5515,7 +5526,7 @@ msgid "Public key should not be the same as your old one."
 msgstr "不能和原来的密钥相同"
 
 #: users/forms/profile.py:149 users/serializers/profile.py:95
-#: users/serializers/profile.py:176 users/serializers/profile.py:203
+#: users/serializers/profile.py:178 users/serializers/profile.py:205
 msgid "Not a valid ssh public key"
 msgstr "SSH密钥不合法"
 
@@ -5559,27 +5570,27 @@ msgstr "最后更新密码日期"
 msgid "Need update password"
 msgstr "需要更新密码"
 
-#: users/models/user.py:888
+#: users/models/user.py:885
 msgid "Can invite user"
 msgstr "可以邀请用户"
 
-#: users/models/user.py:889
+#: users/models/user.py:886
 msgid "Can remove user"
 msgstr "可以移除用户"
 
-#: users/models/user.py:890
+#: users/models/user.py:887
 msgid "Can match user"
 msgstr "可以匹配用户"
 
-#: users/models/user.py:899
+#: users/models/user.py:896
 msgid "Administrator"
 msgstr "管理员"
 
-#: users/models/user.py:902
+#: users/models/user.py:899
 msgid "Administrator is the super user of system"
 msgstr "Administrator是初始的超级管理员"
 
-#: users/models/user.py:927
+#: users/models/user.py:924
 msgid "User password history"
 msgstr "用户密码历史"
 
@@ -5618,7 +5629,7 @@ msgstr "重置 MFA"
 msgid "The old password is incorrect"
 msgstr "旧密码错误"
 
-#: users/serializers/profile.py:36 users/serializers/profile.py:190
+#: users/serializers/profile.py:36 users/serializers/profile.py:192
 msgid "Password does not match security rules"
 msgstr "密码不满足安全规则"
 
@@ -5630,7 +5641,7 @@ msgstr "新密码不能是最近 {} 次的密码"
 msgid "The newly set password is inconsistent"
 msgstr "两次密码不一致"
 
-#: users/serializers/profile.py:142 users/serializers/user.py:140
+#: users/serializers/profile.py:144 users/serializers/user.py:140
 msgid "Is first login"
 msgstr "首次登录"
 
@@ -6668,23 +6679,3 @@ msgstr "旗舰版"
 #: xpack/plugins/license/models.py:77
 msgid "Community edition"
 msgstr "社区版"
-
-#~ msgid "Inherit"
-#~ msgstr "继承"
-
-#~ msgid "Include"
-#~ msgstr "包含"
-
-#~ msgid "Exclude"
-#~ msgstr "不包含"
-
-#~ msgid "DatabaseApp"
-#~ msgstr "数据库应用"
-
-#~ msgid "Database proxy MySQL protocol listen port"
-#~ msgstr "MySQL 协议监听的端口"
-
-#, fuzzy
-#~| msgid "Database proxy PostgreSQL port"
-#~ msgid "Database proxy PostgreSQL listen port"
-#~ msgstr "数据库组件 PostgreSQL 协议监听的端口"
