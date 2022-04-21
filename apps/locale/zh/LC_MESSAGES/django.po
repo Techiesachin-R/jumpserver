@@ -5400,8 +5400,6 @@ msgid "Submit"
 msgstr "提交"
 
 #: tickets/templates/tickets/approve_check_password.html:42
-#, fuzzy
-#| msgid "Enter the username and password to agree directly"
 msgid "Directly enter the username and password to pass the approval"
 msgstr "直接输入用户名和密码即可审批通过"
 
