@@ -81,7 +81,7 @@ class TicketAppliedToAssignee(BaseTicketMessage):
         return title
 
     def get_ticket_approval_url(self):
-        url = reverse('tickets:direct-approve') + '?token=%s' % self.token
+        url = reverse('tickets:direct-approve', kwargs={'token': self.token})
         return urljoin(settings.SITE_URL, url)
 
     def get_html_msg(self) -> dict:

@@ -8,5 +8,5 @@ from .. import views
 app_name = 'tickets'
 
 urlpatterns = [
-    path('direct-approve/', views.TicketDirectApproveView.as_view(), name='direct-approve'),
+    path('direct-approve/<str:token>/', views.TicketDirectApproveView.as_view(), name='direct-approve'),
 ]

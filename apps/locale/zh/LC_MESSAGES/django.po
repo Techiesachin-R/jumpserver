@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: JumpServer 0.3.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-20 16:35+0800\n"
+"POT-Creation-Date: 2022-04-25 09:48+0800\n"
 "PO-Revision-Date: 2021-05-20 10:54+0800\n"
 "Last-Translator: ibuler <ibuler@qq.com>\n"
 "Language-Team: JumpServer team<ibuler@qq.com>\n"
@@ -156,8 +156,7 @@ msgstr "格式为逗号分隔的字符串, * 表示匹配所有. "
 #: authentication/models.py:69
 #: authentication/templates/authentication/_msg_different_city.html:9
 #: authentication/templates/authentication/_msg_oauth_bind.html:9
-#: ops/models/adhoc.py:159 tickets/forms.py:7 tickets/forms.py:9
-#: users/forms/profile.py:31 users/models/user.py:659
+#: ops/models/adhoc.py:159 users/forms/profile.py:31 users/models/user.py:659
 #: users/templates/users/_msg_user_created.html:12
 #: xpack/plugins/change_auth_plan/models/asset.py:34
 #: xpack/plugins/change_auth_plan/models/asset.py:195
@@ -755,9 +754,8 @@ msgstr "校验日期"
 #: assets/models/base.py:177 audits/signal_handlers.py:68
 #: authentication/forms.py:22
 #: authentication/templates/authentication/login.html:181
-#: settings/serializers/auth/ldap.py:43 tickets/forms.py:14
-#: tickets/templates/tickets/approve_check_password.html:25
-#: users/forms/profile.py:21 users/templates/users/_msg_user_created.html:13
+#: settings/serializers/auth/ldap.py:43 users/forms/profile.py:21
+#: users/templates/users/_msg_user_created.html:13
 #: users/templates/users/user_password_verify.html:18
 #: xpack/plugins/change_auth_plan/models/base.py:42
 #: xpack/plugins/change_auth_plan/models/base.py:121
@@ -1392,7 +1390,7 @@ msgid "Filename"
 msgstr "文件名"
 
 #: audits/models.py:43 audits/models.py:115 terminal/models/sharing.py:90
-#: tickets/views/approve.py:90
+#: tickets/views/approve.py:93
 #: xpack/plugins/change_auth_plan/serializers/app.py:87
 #: xpack/plugins/change_auth_plan/serializers/asset.py:197
 msgid "Success"
@@ -2166,6 +2164,7 @@ msgstr "代码错误"
 #: jumpserver/conf.py:299 ops/tasks.py:145 ops/tasks.py:148
 #: perms/templates/perms/_msg_item_permissions_expire.html:3
 #: perms/templates/perms/_msg_permed_items_expire.html:3
+#: tickets/templates/tickets/approve_check_password.html:23
 #: users/templates/users/_msg_account_expire_reminder.html:4
 #: users/templates/users/_msg_password_expire_reminder.html:4
 #: users/templates/users/_msg_reset_mfa.html:4
@@ -5394,30 +5393,29 @@ msgstr "工单信息"
 msgid "Ticket approval"
 msgstr "工单审批"
 
-#: tickets/templates/tickets/approve_check_password.html:38
-#: users/templates/users/forgot_password.html:32
-msgid "Submit"
-msgstr "提交"
-
-#: tickets/templates/tickets/approve_check_password.html:42
-msgid "Directly enter the username and password to pass the approval"
-msgstr "直接输入用户名和密码即可审批通过"
-
-#: tickets/views/approve.py:33
+#: tickets/templates/tickets/approve_check_password.html:35
+#: tickets/views/approve.py:25
 msgid "Ticket direct approval"
 msgstr "工单直接审批"
 
-#: tickets/views/approve.py:34
+#: tickets/templates/tickets/approve_check_password.html:40
+msgid "Go Login"
+msgstr "去登录"
+
+#: tickets/views/approve.py:26
 msgid ""
 "This ticket does not exist, the process has ended, or this link has expired"
 msgstr "工单不存在，或者工单流程已经结束，或者此链接已经过期"
 
-#: tickets/views/approve.py:75 users/views/profile/password.py:36
-#: users/views/profile/password.py:41
-msgid "Password invalid"
-msgstr "用户名或密码无效"
+#: tickets/views/approve.py:55
+msgid "Click the button to approve directly"
+msgstr "点击按钮，即可直接审批成功"
 
-#: tickets/views/approve.py:81
+#: tickets/views/approve.py:57
+msgid "After successful authentication, this ticket can be approved directly"
+msgstr "认证成功后，工单可直接审批"
+
+#: tickets/views/approve.py:84
 msgid "This user is not authorized to approve this ticket"
 msgstr "此用户无权审批此工单"
 
@@ -5793,6 +5791,10 @@ msgstr "点击这里设置密码"
 msgid "Input your email, that will send a mail to your"
 msgstr "输入您的邮箱, 将会发一封重置邮件到您的邮箱中"
 
+#: users/templates/users/forgot_password.html:32
+msgid "Submit"
+msgstr "提交"
+
 #: users/templates/users/mfa_setting.html:24
 msgid "Enable MFA"
 msgstr "启用 MFA 多因子认证"
@@ -5926,6 +5928,10 @@ msgstr "MFA(OTP) 禁用成功"
 #: users/views/profile/otp.py:165
 msgid "OTP disable success, return login page"
 msgstr "MFA(OTP) 禁用成功，返回登录页面"
+
+#: users/views/profile/password.py:36 users/views/profile/password.py:41
+msgid "Password invalid"
+msgstr "用户名或密码无效"
 
 #: users/views/profile/reset.py:40
 msgid "Send reset password message"
